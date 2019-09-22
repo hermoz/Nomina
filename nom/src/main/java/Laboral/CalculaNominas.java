@@ -1,5 +1,8 @@
 package Laboral;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+
 public class CalculaNominas {
 
 	public static void main(String[] args) throws Exception {
@@ -23,6 +26,26 @@ public class CalculaNominas {
 		//Imprimimos de nuevo para observar cambios
 		escribe(emp,emp2);
 		
+		
+		/*
+		 * Definimos fichero llamado empleados.txt con los datos del enunciado para ambos empleados 
+		 * Realizamos la escritura en un fichero empleados.txt actualizando los datos establecidos en el 
+		 * apartado anterior
+		 * 
+		 * 	
+		 * Declaramos un nuevo método en las clases llamado: escribeFichero
+		 * para la escritura en el nuevo fichero con un formato distinto donde sólo aparezcan los valores
+		 * separados por comas
+		 */
+		
+		FileWriter escribir = new FileWriter("empleados.txt");
+		BufferedWriter bw = new BufferedWriter(escribir);
+		
+		bw.write(emp.escribeFichero()+ "\n");
+		bw.write(emp2.escribeFichero()+ "\n");
+		
+		bw.close();
+		
 	}
 	
 	/*
@@ -35,5 +58,7 @@ public class CalculaNominas {
 		System.out.println("Datos: " + emp.imprimir() + " .Sueldo: " + Nomina.sueldo(emp));
 		System.out.println("Datos: " + emp2.imprimir() + " .Sueldo: " + Nomina.sueldo(emp2));
 	}
+	
+
 
 }

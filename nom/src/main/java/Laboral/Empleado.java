@@ -65,6 +65,11 @@ public class Empleado extends Persona {
 		return datosempleado;
 	}
 	
+	public String escribeFichero() {
+		String data = super.escribeFichero () + ","+ categoria + ","+ anyos;
+		return data;
+	}
+	
 
 	
 }

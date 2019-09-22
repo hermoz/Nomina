@@ -33,5 +33,10 @@ public class Persona {
 		return datos;
 	}
 	
+	public String escribeFichero() {
+		String data = nombre + "," + dni + ","+ sexo;
+		return data;
+	}
+	
 
 }
